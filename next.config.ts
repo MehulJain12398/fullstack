@@ -18,7 +18,10 @@ const nextConfig: NextConfig = {
         port: "",
       },
     ]
-  }
+  },
+  // env: {
+  //   IMAGE_KIT_PRIVATE_KEY: process.env.IMAGE_KIT_PRIVATE_KEY,
+  // },
 };
 
 export default nextConfig;
