@@ -6,8 +6,12 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 import Logo from "../public/icons/logo.svg"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Session } from 'next-auth'
+import { getInitials } from '@/lib/utils'
 
-const Header = () => {
+
+const Header = ({session} : {session: Session}) => {
 
     const pathname = usePathname()
   return (
@@ -23,6 +27,16 @@ const Header = () => {
                 pathname === "/library" ? "text-light-200" : "text-light-100",)}>
                 Library
             </Link>
+        </li>
+
+        <li>
+          <Link href="/my-profile">
+            <Avatar>
+              <AvatarFallback className='bg-amber-100 text-black'>
+                {getInitials(session?.user?.name) || "IN"}
+              </AvatarFallback>
+            </Avatar>
+          </Link>
         </li>
 
       </ul>
