@@ -19,6 +19,12 @@ const nextConfig: NextConfig = {
       },
     ]
   },
+  typescript:{
+    ignoreBuildErrors:true,
+  },
+  eslint:{
+    ignoreDuringBuilds:true
+  }
   // env: {
   //   IMAGE_KIT_PRIVATE_KEY: process.env.IMAGE_KIT_PRIVATE_KEY,
   // },

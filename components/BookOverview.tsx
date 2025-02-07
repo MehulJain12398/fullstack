@@ -19,7 +19,7 @@ interface Props extends Book {
     color,
     cover,
     // id,
-    // userId
+    userId
   }: Props) => {
   return (
     <section className='book-overview'>
@@ -65,15 +65,15 @@ interface Props extends Book {
             <BookCover
             variant="wide"
             className="z-10"
-            color={color}
-            cover={cover}
+            color={color || ""}
+            cover={cover || ""}
           />
 
             <div className="absolute left-16 top-10 rotate-12 opacity-40 max-sm:hidden">
             <BookCover
               variant="wide"
-              color={color}
-              cover={cover}
+              color={color || ""}
+              cover={cover || ""}
             />
           </div>
             </div>
